@@ -1,0 +1,147 @@
+fiscal_years:
+  2025-26:
+    default_monthly_goal: null
+    territories:
+      EastKing:
+        Oct: null
+        Nov: null
+        Dec: null
+        Jan: null
+        Feb: null
+        Mar: null
+        Apr: null
+        May: null
+        Jun: null
+        Jul: null
+        Aug: null
+        Sep: null
+      SouthKing:
+        Oct: null
+        Nov: null
+        Dec: null
+        Jan: null
+        Feb: null
+        Mar: null
+        Apr: null
+        May: null
+        Jun: null
+        Jul: null
+        Aug: null
+        Sep: null
+      NorthKing:
+        Oct: null
+        Nov: null
+        Dec: null
+        Jan: null
+        Feb: null
+        Mar: null
+        Apr: null
+        May: null
+        Jun: null
+        Jul: null
+        Aug: null
+        Sep: null
+      Pierce:
+        Oct: 3455
+        Nov: 1020
+        Dec: 2825
+        Jan: 1550
+        Feb: 1840
+        Mar: 6155
+        Apr: 505
+        May: 2108.1
+        Jun: 3260
+        Jul: 730
+        Aug: 0
+        Sep: 0
+      Snohomish:
+        Oct: 3505
+        Nov: 3405
+        Dec: 2700
+        Jan: 2900
+        Feb: 3000
+        Mar: 3505
+        Apr: 3000
+        May: 2628.75
+        Jun: 3505
+        Jul: 3505
+        Aug: 3505
+        Sep: 3505
+      Spokane/NE:
+        Oct: null
+        Nov: null
+        Dec: null
+        Jan: null
+        Feb: null
+        Mar: null
+        Apr: null
+        May: null
+        Jun: null
+        Jul: null
+        Aug: null
+        Sep: null
+      Southwest:
+        Oct: null
+        Nov: null
+        Dec: null
+        Jan: null
+        Feb: null
+        Mar: null
+        Apr: null
+        May: null
+        Jun: null
+        Jul: null
+        Aug: null
+        Sep: null
+      TKP:
+        Oct: 3105
+        Nov: 3005
+        Dec: 2500
+        Jan: 2600
+        Feb: 2600
+        Mar: 3105
+        Apr: 0
+        May: 0
+        Jun: 0
+        Jul: 0
+        Aug: 0
+        Sep: 0
+      Southeast:
+        Oct: null
+        Nov: null
+        Dec: null
+        Jan: null
+        Feb: null
+        Mar: null
+        Apr: null
+        May: null
+        Jun: null
+        Jul: null
+        Aug: null
+        Sep: null
+      NorthCentral:
+        Oct: null
+        Nov: null
+        Dec: null
+        Jan: null
+        Feb: null
+        Mar: null
+        Apr: null
+        May: null
+        Jun: null
+        Jul: null
+        Aug: null
+        Sep: null
+      Majors/NRA:
+        Oct: null
+        Nov: null
+        Dec: null
+        Jan: null
+        Feb: null
+        Mar: null
+        Apr: null
+        May: null
+        Jun: null
+        Jul: null
+        Aug: null
+        Sep: null

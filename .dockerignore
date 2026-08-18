@@ -1,0 +1,13 @@
+.git
+.gitignore
+.env
+data/
+docs/
+tests/
+reports/*/tests/
+scripts/archive/
+*.xls
+*.xlsx
+!reports/membership_performance_tracker/template.xlsx
+__pycache__/
+*.pyc

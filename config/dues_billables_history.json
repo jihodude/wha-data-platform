@@ -1,0 +1,313 @@
+{
+  "_comment": "Frozen billables observations behind TA-MASTER column D. Billables are a photograph, not a ledger \u2014 a closed month cannot be recomputed. See logic/billables_capture.py.",
+  "captures": {
+    "2025-10#end_1st": {
+      "values": {
+        "_TOTAL": 218036.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2025-10#end_2nd": {
+      "values": {
+        "_TOTAL": 216097.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2025-10#end_3rd": {
+      "values": {
+        "E King": 25414.0,
+        "NorthCentral": 15031.5,
+        "NorthKing": 19835.0,
+        "Pierce": 26770.5,
+        "Snoho": 28461.5,
+        "Southeast": 6092.0,
+        "SouthKing": 18501.5,
+        "Southwest": 17840.0,
+        "Spokane/NE": 37251.5,
+        "TKP": 18464.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22 \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:33:32+00:00"
+    },
+    "2025-10#start_1st": {
+      "values": {
+        "_TOTAL": 215553.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2025-11#end_1st": {
+      "values": {
+        "_TOTAL": 223568.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2025-11#end_2nd": {
+      "values": {
+        "_TOTAL": 223403.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2025-11#end_3rd": {
+      "values": {
+        "E King": 15335.0,
+        "NorthCentral": 13197.5,
+        "NorthKing": 35555.5,
+        "Pierce": 48730.0,
+        "Snoho": 21584.5,
+        "Southeast": 13560.0,
+        "SouthKing": 21261.5,
+        "Southwest": 18758.0,
+        "Spokane/NE": 15677.0,
+        "TKP": 16389.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22 \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:33:32+00:00"
+    },
+    "2025-11#start_1st": {
+      "values": {
+        "_TOTAL": 217911.95
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2025-12#end_1st": {
+      "values": {
+        "_TOTAL": 394769.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2025-12#end_2nd": {
+      "values": {
+        "_TOTAL": 384951.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2025-12#end_3rd": {
+      "values": {
+        "E King": 28470.5,
+        "NorthCentral": 85518.5,
+        "NorthKing": 27393.0,
+        "Pierce": 84885.0,
+        "Snoho": 29173.0,
+        "Southeast": 14561.0,
+        "SouthKing": 29934.5,
+        "Southwest": 26867.0,
+        "Spokane/NE": 19344.0,
+        "TKP": 31069.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22 \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:33:32+00:00"
+    },
+    "2025-12#start_1st": {
+      "values": {
+        "_TOTAL": 397071.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-01#end_1st": {
+      "values": {
+        "_TOTAL": 285245.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-01#end_2nd": {
+      "values": {
+        "_TOTAL": 288245.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-01#end_3rd": {
+      "values": {
+        "E King": 29754.5,
+        "NorthCentral": 16425.0,
+        "NorthKing": 38870.0,
+        "Pierce": 8345.0,
+        "Snoho": 36791.0,
+        "Southeast": 5825.0,
+        "SouthKing": 50615.5,
+        "Southwest": 24073.75,
+        "Spokane/NE": 21852.5,
+        "TKP": 25092.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22 \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:33:32+00:00"
+    },
+    "2026-01#start_1st": {
+      "values": {
+        "_TOTAL": 277030.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-02#end_1st": {
+      "values": {
+        "_TOTAL": 243229.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-02#end_2nd": {
+      "values": {
+        "_TOTAL": 244531.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-02#end_3rd": {
+      "values": {
+        "E King": 23316.5,
+        "NorthCentral": 12264.5,
+        "NorthKing": 47587.5,
+        "Pierce": 13875.0,
+        "Snoho": 34358.0,
+        "Southeast": 12748.0,
+        "SouthKing": 16751.5,
+        "Southwest": 14509.5,
+        "Spokane/NE": 51064.5,
+        "TKP": 14926.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22 \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:33:32+00:00"
+    },
+    "2026-02#start_1st": {
+      "values": {
+        "_TOTAL": 243569.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-03#end_1st": {
+      "values": {
+        "_TOTAL": 319512.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-03#end_2nd": {
+      "values": {
+        "_TOTAL": 312614.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-03#end_3rd": {
+      "values": {
+        "E King": 88213.5,
+        "NorthCentral": 15168.0,
+        "NorthKing": 44707.0,
+        "Pierce": 24940.0,
+        "Snoho": 21708.0,
+        "Southeast": 0.0,
+        "SouthKing": 33302.0,
+        "Southwest": 24833.5,
+        "Spokane/NE": 45477.0,
+        "TKP": 18450.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22 \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:33:32+00:00"
+    },
+    "2026-03#start_1st": {
+      "values": {
+        "_TOTAL": 322237.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-04#end_1st": {
+      "values": {
+        "_TOTAL": 172828.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-04#end_2nd": {
+      "values": {
+        "_TOTAL": 172828.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-04#end_3rd": {
+      "values": {
+        "E King": 12230.0,
+        "NorthCentral": 18770.0,
+        "NorthKing": 23874.0,
+        "Pierce": 14415.0,
+        "Snoho": 15968.0,
+        "Southeast": 1580.0,
+        "SouthKing": 19135.0,
+        "Southwest": 10345.0,
+        "Spokane/NE": 26725.0,
+        "TKP": 26992.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22 \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:33:32+00:00"
+    },
+    "2026-04#start_1st": {
+      "values": {
+        "_TOTAL": 172828.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-05#end_1st": {
+      "values": {
+        "_TOTAL": 207192.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-05#end_2nd": {
+      "values": {
+        "_TOTAL": 207192.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-05#end_3rd": {
+      "values": {
+        "_TOTAL": 202690.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-05#start_1st": {
+      "values": {
+        "_TOTAL": 211642.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-06#end_1st": {
+      "values": {
+        "_TOTAL": 290364.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-06#end_2nd": {
+      "values": {
+        "_TOTAL": 287019.5
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    },
+    "2026-06#start_1st": {
+      "values": {
+        "_TOTAL": 291774.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, Input Sheet billing ladder \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-27T22:45:34+00:00"
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "_comment": "Frozen billables observations behind TA-MASTER column D. Billables are a photograph, not a ledger \u2014 a closed month cannot be recomputed. See logic/billables_capture.py.",
+  "captures": {
+    "2025-10#new_sales": {
+      "values": {
+        "E King": 3705.0,
+        "NorthKing": 2755.0,
+        "Pierce": 3455.0,
+        "Snoho": 3190.0,
+        "SouthKing": 1260.0,
+        "Southwest": 510.0,
+        "TKP": 1530.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, column E \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-28T16:17:53+00:00"
+    },
+    "2025-11#new_sales": {
+      "values": {
+        "E King": 1240.0,
+        "Pierce": 1020.0,
+        "Snoho": 2920.0,
+        "Southeast": 360.0,
+        "SouthKing": 510.0,
+        "Southwest": 2435.0,
+        "Spokane/NE": 730.0,
+        "TKP": 510.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, column E \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-28T16:17:53+00:00"
+    },
+    "2025-12#new_sales": {
+      "values": {
+        "E King": 1800.0,
+        "NorthKing": 1070.0,
+        "Pierce": 2825.0,
+        "Snoho": 1020.0,
+        "SouthKing": 2124.99,
+        "Southwest": 510.0,
+        "TKP": 730.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, column E \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-28T16:17:53+00:00"
+    },
+    "2026-01#new_sales": {
+      "values": {
+        "E King": 2820.0,
+        "Pierce": 1550.0,
+        "SouthKing": 6572.0,
+        "Southwest": 2418.5,
+        "Spokane/NE": 8525.0,
+        "TKP": 4356.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, column E \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-28T16:17:53+00:00"
+    },
+    "2026-02#new_sales": {
+      "values": {
+        "E King": 1240.0,
+        "NorthKing": 4276.09,
+        "Pierce": 510.0,
+        "Snoho": 1999.5,
+        "Southwest": 1070.0,
+        "Spokane/NE": 1352.5,
+        "TKP": 5290.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, column E \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-28T16:17:53+00:00"
+    },
+    "2026-03#new_sales": {
+      "values": {
+        "E King": 821.5,
+        "NorthCentral": 2825.0,
+        "NorthKing": 510.0,
+        "Pierce": 4915.0,
+        "SouthKing": 510.0,
+        "TKP": 620.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, column E \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-28T16:17:53+00:00"
+    },
+    "2026-04#new_sales": {
+      "values": {
+        "NorthKing": 850.0,
+        "Snoho": 2775.0,
+        "Spokane/NE": 1800.0,
+        "TKP": 3640.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, column E \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-28T16:17:53+00:00"
+    },
+    "2026-05#new_sales": {
+      "values": {
+        "E King": 4185.0,
+        "NorthCentral": 1240.0,
+        "NorthKing": 7208.0,
+        "Pierce": 2108.1,
+        "Snoho": 3045.0,
+        "Southeast": 1240.0,
+        "Spokane/NE": 1070.0,
+        "TKP": 240.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, column E \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-28T16:17:53+00:00"
+    },
+    "2026-06#new_sales": {
+      "values": {
+        "E King": 510.0,
+        "NorthCentral": 2325.0,
+        "NorthKing": 5430.0,
+        "Pierce": 1460.0,
+        "Snoho": 3024.0,
+        "Southeast": 1800.0,
+        "Southwest": 5723.5,
+        "Spokane/NE": 2870.0,
+        "TKP": 240.0
+      },
+      "provenance": "FY 25 Dues Summary workbook as-received 2026-07-22, column E \u2014 Jennifer's recorded observation, not computed by us",
+      "captured_at": "2026-07-28T16:17:53+00:00"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Pinned 2026-08-08 to the exact versions of cloud build 355deece (the image
+# that produced the 6,231/6,231 cell-parity verification) — D2 finding 8:
+# unpinned deps meant every deploy recomputed validated numbers on a stack
+# nobody validated. Change a pin only with a re-run of the number battery.
+streamlit==1.61.1
+altair==6.2.2
+fastapi==0.141.1
+uvicorn[standard]==0.52.1
+openpyxl==3.1.5
+pandas==3.0.5
+pyyaml==6.0.3
+python-multipart==0.0.32
+msoffcrypto-tool==6.0.0
+pytest==9.1.1
+jinja2==3.1.6
+requests==2.34.2
+python-dotenv==1.2.2
+xlrd==2.0.2

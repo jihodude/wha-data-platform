@@ -1,0 +1,134 @@
+# admin_inputs.yaml — Persistent admin-entered values.
+#
+# These are data points that cannot come from SLX and must be entered manually.
+# Values here stay in effect until an admin explicitly updates them through the UI.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# pen_market[t]
+#   Total hospitality market size per territory — every restaurant/hotel in the
+#   territory whether WHA member or not. Source: Hannah's market research.
+#   Updated once per fiscal year.
+#   pen_pct[t] = pen_active[t] (from SLX) / pen_market[t] (this file)
+#
+# yoy_targets[t]
+#   Prior-year same-month combined billables benchmark per territory.
+#   Used to compute latest_vs_target[t] on the Scoreboard.
+#   Updated at the start of each fiscal year once prior-year data is confirmed.
+# ─────────────────────────────────────────────────────────────────────────────
+
+fiscal_years:
+  2025-26:
+
+    # Total hospitality market size per territory (Hannah's external research)
+    # Source: "Penetration Report - Hospitality 3.3.csv" — Combined section, Sum column
+    # (Active WHA members + Inactive/former members = total known market per territory)
+    pen_market:
+      EastKing:    535
+      SouthKing:   446
+      NorthKing:   387
+      Pierce:      491
+      Snohomish:   639
+      Spokane/NE:  405
+      Southwest:   491
+      TKP:         482
+      Southeast:   372
+      NorthCentral: 602
+      Majors/NRA:  null   # excluded from penetration (NRA pays nationally, tracked separately)
+
+    # Prior-year same-period combined billables (hosp + allied) per territory
+    # Source: last season's post-ITD snapshot or Scoreboard final numbers
+    yoy_targets:
+      EastKing:    191
+      SouthKing:   228
+      NorthKing:   295
+      Pierce:      226
+      Snohomish:   223
+      Spokane/NE:  331
+      Southwest:   193
+      TKP:         241
+      Southeast:   148
+      NorthCentral: 215
+      Majors/NRA:  null   # excluded from YoY comparison
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # Penetration breakdown — Restaurant + Lodging separately
+    # Source: Hannah's penetration CSV (Restaurant section, Lodging section)
+    # `pen_market_*` = Sum column (Active + Inactive)
+    # `pen_active_*` = Active column
+    # Feeds v4 tracker metrics:
+    #   Total Target Locations - Restaurant/Lodging (#)  ← pen_market_*
+    #   Target Members - Restaurant/Lodging (#)          ← pen_active_*
+    #   Penetration - Restaurant/Lodging %               ← derived in mapper
+    # ─────────────────────────────────────────────────────────────────────────
+    pen_market_restaurant:
+      EastKing:    482
+      SouthKing:   356
+      NorthKing:   307
+      Pierce:      454
+      Snohomish:   536
+      Spokane/NE:  331
+      Southwest:   420
+      TKP:         388
+      Southeast:   301
+      NorthCentral: 481
+      Majors/NRA:  null
+
+    pen_market_lodging:
+      EastKing:    53
+      SouthKing:   90
+      NorthKing:   80
+      Pierce:      37
+      Snohomish:   103
+      Spokane/NE:  74
+      Southwest:   71
+      TKP:         94
+      Southeast:   71
+      NorthCentral: 121
+      Majors/NRA:  null
+
+    pen_active_restaurant:
+      EastKing:    252
+      SouthKing:   246
+      NorthKing:   228
+      Pierce:      358
+      Snohomish:   239
+      Spokane/NE:  284
+      Southwest:   260
+      TKP:         313
+      Southeast:   78
+      NorthCentral: 291
+      Majors/NRA:  null
+
+    pen_active_lodging:
+      EastKing:    28
+      SouthKing:   35
+      NorthKing:   66
+      Pierce:      13
+      Snohomish:   60
+      Spokane/NE:  55
+      Southwest:   44
+      TKP:         51
+      Southeast:   23
+      NorthCentral: 51
+      Majors/NRA:  null
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # Non-revenue goals per territory per month
+    # Revenue goals live in goals.yaml; these are supplementary KPI targets.
+    # `goal_retention`: stored as decimal (0.92 = 92%). Per SOP, 92% is the
+    #   standard statewide target. Override per-territory below if any rep
+    #   has a different number. Applied to every month in the run.
+    # `goal_members`: monthly new-member count target. Null until admins enter
+    #   per-territory monthly targets. Same default/override structure.
+    # ─────────────────────────────────────────────────────────────────────────
+    goal_retention_default: 0.92
+    goal_retention_overrides: {}    # e.g. {EastKing: 0.95} if a rep has a different target
+
+    # `goal_penetration`: statewide restaurant penetration target.
+    #   Stored as decimal (0.75 = 75%). Compared against the SLX-computed
+    #   restaurant penetration to mark a territory on-track vs below-threshold.
+    goal_penetration_default: 0.75
+    goal_penetration_overrides: {}  # e.g. {Pierce: 0.80} for a higher local target
+
+    goal_members_default: null      # null = no member goal set; admins fill per territory
+    goal_members_overrides: {}      # e.g. {Pierce: {Mar: 5, Apr: 4}} per-territory monthly

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Module1" script:language="StarBasic">
+Sub ReorderTM2(inUrl As String, outUrl As String)
+    Dim oDesk, oDoc, oSheets, oSheet, oCell
+    Dim i%, r%, b0%, src%
+    oDesk = createUnoService("com.sun.star.frame.Desktop")
+    Dim args(0) As New com.sun.star.beans.PropertyValue
+    args(0).Name = "Hidden" : args(0).Value = True
+    oDoc = oDesk.loadComponentFromURL(inUrl, "_blank", 0, args())
+    oSheets = oDoc.getSheets()
+    For i = 0 To oSheets.getCount() - 1
+        oSheet = oSheets.getByIndex(i)
+        If Left(oSheet.getName(), 4) = "TM -" Then
+            b0 = -1
+            For r = 80 To 200
+                oCell = oSheet.getCellByPosition(0, r)
+                If InStr(oCell.getString(), "TARGET + NON-TARGET") &gt; 0 Then
+                    b0 = r
+                    Exit For
+                End If
+            Next r
+            If b0 &gt;= 0 Then
+                oSheet.getRows().insertByIndex(5, 21)
+                src = b0 + 21
+                Dim oRange, oDest
+                oRange = oSheet.getCellRangeByPosition(0, src, 43, src + 19).getRangeAddress()
+                oDest = oSheet.getCellByPosition(0, 5).getCellAddress()
+                oSheet.moveRange(oDest, oRange)
+                oSheet.getRows().removeByIndex(src, 20)
+            End If
+        End If
+    Next i
+    Dim sargs(0) As New com.sun.star.beans.PropertyValue
+    sargs(0).Name = "FilterName" : sargs(0).Value = "Calc MS Excel 2007 XML"
+    oDoc.storeToURL(outUrl, sargs())
+    oDoc.close(False)
+End Sub
+
+Sub AddCompLines(inUrl As String, outUrl As String)
+    Dim oDesk, oDoc, oSheets, oSheet, oCell
+    Dim i%, r%, bobRow%, revRow%
+    oDesk = createUnoService("com.sun.star.frame.Desktop")
+    Dim args(0) As New com.sun.star.beans.PropertyValue
+    args(0).Name = "Hidden" : args(0).Value = True
+    oDoc = oDesk.loadComponentFromURL(inUrl, "_blank", 0, args())
+    oSheets = oDoc.getSheets()
+    For i = 0 To oSheets.getCount() - 1
+        oSheet = oSheets.getByIndex(i)
+        If Left(oSheet.getName(), 4) = "TM -" Then
+            bobRow = -1 : revRow = -1
+            For r = 5 To 30
+                oCell = oSheet.getCellByPosition(0, r)
+                If InStr(oCell.getString(), "BOB ($)") &gt; 0 And bobRow = -1 Then
+                    bobRow = r
+                End If
+                If InStr(oCell.getString(), "Revenue Retained") &gt; 0 And revRow = -1 Then
+                    revRow = r
+                End If
+            Next r
+            If bobRow &gt;= 0 And revRow &gt; bobRow Then
+                oSheet.getRows().insertByIndex(bobRow + 1, 1)
+                oSheet.getRows().insertByIndex(revRow + 2, 2)
+            End If
+        End If
+    Next i
+    Dim sargs(0) As New com.sun.star.beans.PropertyValue
+    sargs(0).Name = "FilterName" : sargs(0).Value = "Calc MS Excel 2007 XML"
+    oDoc.storeToURL(outUrl, sargs())
+    oDoc.close(False)
+End Sub
+
+Sub AddBobLine(inUrl As String, outUrl As String)
+    Dim oDesk, oDoc, oSheets, oSheet, oCell
+    Dim i%, r%, anchor%
+    oDesk = createUnoService("com.sun.star.frame.Desktop")
+    Dim args(0) As New com.sun.star.beans.PropertyValue
+    args(0).Name = "Hidden" : args(0).Value = True
+    oDoc = oDesk.loadComponentFromURL(inUrl, "_blank", 0, args())
+    oSheets = oDoc.getSheets()
+    For i = 0 To oSheets.getCount() - 1
+        oSheet = oSheets.getByIndex(i)
+        If Left(oSheet.getName(), 4) = "TM -" Then
+            anchor = -1
+            For r = 5 To 35
+                oCell = oSheet.getCellByPosition(0, r)
+                If InStr(oCell.getString(), "Comped Members") &gt; 0 Then
+                    anchor = r
+                    Exit For
+                End If
+            Next r
+            If anchor &gt;= 0 Then
+                oSheet.getRows().insertByIndex(anchor + 1, 1)
+            End If
+        End If
+    Next i
+    Dim sargs(0) As New com.sun.star.beans.PropertyValue
+    sargs(0).Name = "FilterName" : sargs(0).Value = "Calc MS Excel 2007 XML"
+    oDoc.storeToURL(outUrl, sargs())
+    oDoc.close(False)
+End Sub
+
+Sub AddLocationLines(inUrl As String, outUrl As String)
+    Dim oDesk, oDoc, oSheets, oSheet, oCell
+    Dim i%, r%, ntRow%, tRow%, cRow%
+    Dim s As String
+    oDesk = createUnoService("com.sun.star.frame.Desktop")
+    Dim args(0) As New com.sun.star.beans.PropertyValue
+    args(0).Name = "Hidden" : args(0).Value = True
+    oDoc = oDesk.loadComponentFromURL(inUrl, "_blank", 0, args())
+    oSheets = oDoc.getSheets()
+    For i = 0 To oSheets.getCount() - 1
+        oSheet = oSheets.getByIndex(i)
+        If Left(oSheet.getName(), 4) = "TM -" Then
+            ntRow = -1 : tRow = -1 : cRow = -1
+            For r = 4 To 140
+                s = oSheet.getCellByPosition(0, r).getString()
+                If s = "Hospitality Non-Target (#)" Then ntRow = r
+                If s = "Hospitality Target (#)" Then tRow = r
+                If InStr(s, "Hospitality Combined") &gt; 0 Then cRow = r
+            Next r
+            If ntRow &gt; 0 And tRow &gt; 0 And cRow &gt; 0 Then
+                oSheet.getRows().insertByIndex(ntRow + 1, 1)
+                oSheet.getRows().insertByIndex(tRow + 1, 1)
+                oSheet.getRows().insertByIndex(cRow + 1, 1)
+            End If
+        End If
+    Next i
+    Dim sargs(0) As New com.sun.star.beans.PropertyValue
+    sargs(0).Name = "FilterName" : sargs(0).Value = "Calc MS Excel 2007 XML"
+    oDoc.storeToURL(outUrl, sargs())
+    oDoc.close(False)
+End Sub
+
+
+Sub AddBobCountLine(inUrl As String, outUrl As String)
+    Dim oDesk, oDoc, oSheets, oSheet
+    Dim i%, r%, anchor%
+    Dim s As String
+    oDesk = createUnoService("com.sun.star.frame.Desktop")
+    Dim args(0) As New com.sun.star.beans.PropertyValue
+    args(0).Name = "Hidden" : args(0).Value = True
+    oDoc = oDesk.loadComponentFromURL(inUrl, "_blank", 0, args())
+    oSheets = oDoc.getSheets()
+    For i = 0 To oSheets.getCount() - 1
+        oSheet = oSheets.getByIndex(i)
+        If Left(oSheet.getName(), 4) = "TM -" Then
+            anchor = -1
+            For r = 4 To 60
+                s = oSheet.getCellByPosition(0, r).getString()
+                If InStr(s, "BOB Renewals ($)") &gt; 0 Then
+                    anchor = r
+                    Exit For
+                End If
+            Next r
+            If anchor &gt; 0 Then
+                oSheet.getRows().insertByIndex(anchor + 1, 1)
+            End If
+        End If
+    Next i
+    Dim sargs(0) As New com.sun.star.beans.PropertyValue
+    sargs(0).Name = "FilterName" : sargs(0).Value = "Calc MS Excel 2007 XML"
+    oDoc.storeToURL(outUrl, sargs())
+    oDoc.close(False)
+End Sub
+
+
+Sub Batch2Surgery(inUrl As String, outUrl As String)
+    Dim oDesk, oDoc, oSheets, oSheet
+    Dim i%, r%, t3%, n3pct%, k%
+    Dim s As String
+    Dim delRows(2) As Integer
+    oDesk = createUnoService("com.sun.star.frame.Desktop")
+    Dim args(0) As New com.sun.star.beans.PropertyValue
+    args(0).Name = "Hidden" : args(0).Value = True
+    oDoc = oDesk.loadComponentFromURL(inUrl, "_blank", 0, args())
+    oSheets = oDoc.getSheets()
+    For i = 0 To oSheets.getCount() - 1
+        oSheet = oSheets.getByIndex(i)
+        If Left(oSheet.getName(), 4) = "TM -" Then
+            t3 = -1 : n3pct = -1 : k = 0
+            delRows(0) = -1 : delRows(1) = -1 : delRows(2) = -1
+            For r = 4 To 160
+                s = oSheet.getCellByPosition(0, r).getString()
+                If s = "Revenue Retained - Target ($)" Then t3 = r
+                If s = "Retention % - Non-Target" Then n3pct = r
+                If InStr(s, "Closed Businesses") = 1 Then
+                    If k &lt; 3 Then
+                        delRows(k) = r
+                        k = k + 1
+                    End If
+                End If
+            Next r
+            If t3 &gt; 0 And n3pct &gt; 0 Then
+                ' bottom-up: collect every op row, apply in descending order
+                Dim ops(4) As Integer
+                Dim kinds(4) As Integer   ' 0 = delete 1 row, 1 = insert 2 rows
+                Dim n%
+                n = 0
+                For k = 0 To 2
+                    If delRows(k) &gt; 0 Then
+                        ops(n) = delRows(k) : kinds(n) = 0 : n = n + 1
+                    End If
+                Next k
+                ops(n) = t3 : kinds(n) = 1 : n = n + 1
+                ops(n) = n3pct + 1 : kinds(n) = 1 : n = n + 1
+                ' sort desc (tiny bubble)
+                Dim a%, b%, tmp%
+                For a = 0 To n - 2
+                    For b = a + 1 To n - 1
+                        If ops(b) &gt; ops(a) Then
+                            tmp = ops(a) : ops(a) = ops(b) : ops(b) = tmp
+                            tmp = kinds(a) : kinds(a) = kinds(b) : kinds(b) = tmp
+                        End If
+                    Next b
+                Next a
+                For a = 0 To n - 1
+                    If kinds(a) = 0 Then
+                        oSheet.getRows().removeByIndex(ops(a), 1)
+                    Else
+                        oSheet.getRows().insertByIndex(ops(a) + 1, 2)
+                    End If
+                Next a
+            End If
+        End If
+    Next i
+    Dim sargs(0) As New com.sun.star.beans.PropertyValue
+    sargs(0).Name = "FilterName" : sargs(0).Value = "Calc MS Excel 2007 XML"
+    oDoc.storeToURL(outUrl, sargs())
+    oDoc.close(False)
+End Sub
+
+
+Sub Batch2SurgeryB(inUrl As String, outUrl As String)
+    Dim oDesk, oDoc, oSheets, oSheet
+    Dim i%, r%, t3%, n3pct%, cc%, t4c%, n4c%
+    Dim s As String
+    oDesk = createUnoService("com.sun.star.frame.Desktop")
+    Dim args(0) As New com.sun.star.beans.PropertyValue
+    args(0).Name = "Hidden" : args(0).Value = True
+    oDoc = oDesk.loadComponentFromURL(inUrl, "_blank", 0, args())
+    oSheets = oDoc.getSheets()
+    For i = 0 To oSheets.getCount() - 1
+        oSheet = oSheets.getByIndex(i)
+        If Left(oSheet.getName(), 4) = "TM -" Then
+            t3 = -1 : n3pct = -1 : cc = -1 : t4c = -1 : n4c = -1
+            For r = 4 To 160
+                s = oSheet.getCellByPosition(0, r).getString()
+                If s = "Revenue Retained - Target ($)" Then t3 = r
+                If s = "Retention % - Non-Target" Then n3pct = r
+                If InStr(s, "Closed Businesses") &gt; 0 Then
+                    If InStr(s, "Combined") &gt; 0 Then
+                        cc = r
+                    ElseIf InStr(s, "Non-Target") &gt; 0 Then
+                        n4c = r
+                    Else
+                        t4c = r
+                    End If
+                End If
+            Next r
+            If t3 &gt; 0 And n3pct &gt; 0 Then
+                ' structural order is fixed: cc &lt; t3 &lt; t4c &lt; n3pct &lt; n4c
+                ' apply bottom-up so earlier indexes stay valid
+                If n4c &gt; 0 Then oSheet.getRows().removeByIndex(n4c, 1)
+                oSheet.getRows().insertByIndex(n3pct + 2, 2)
+                If t4c &gt; 0 Then oSheet.getRows().removeByIndex(t4c, 1)
+                oSheet.getRows().insertByIndex(t3 + 1, 2)
+                If cc &gt; 0 Then oSheet.getRows().removeByIndex(cc, 1)
+            End If
+        End If
+    Next i
+    Dim sargs(0) As New com.sun.star.beans.PropertyValue
+    sargs(0).Name = "FilterName" : sargs(0).Value = "Calc MS Excel 2007 XML"
+    oDoc.storeToURL(outUrl, sargs())
+    oDoc.close(False)
+End Sub
+
+</script:module>

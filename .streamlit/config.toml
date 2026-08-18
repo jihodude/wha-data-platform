@@ -1,0 +1,13 @@
+# Committed console config (8/8): hide Streamlit's developer chrome —
+# the header "Deploy" button opened Streamlit's own cloud dialog for
+# operators. viewer mode keeps only the app itself.
+[client]
+toolbarMode = "viewer"
+[browser]
+gatherUsageStats = false
+
+# Pinned LIGHT theme (8/10, Jiho's dark-browser session): the console's
+# styling was designed for light; auto-following the OS produced black
+# inputs and invisible radio labels. Deterministic for every user.
+[theme]
+base = "light"

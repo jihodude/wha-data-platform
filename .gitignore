@@ -1,0 +1,45 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Generated output (large files, not version-controlled)
+data/output/*.xlsx
+data/output/*.json
+
+# Sensitive archive files (contain real member data)
+data/_archive/
+
+# CRM ground-truth exports (member data — never commit)
+data/truth/
+
+# Runtime data — never commit (AGENTS.md rule 4)
+data/cache/
+data/hub/
+data/output/
+data/schedule.json
+data/raw/*.bak.xlsx
+data/raw/*.sep_first.bak.xlsx
+data/raw/dues_inputs.xlsx
+
+# Crystal export archive — the exports themselves hold member PII and live
+# permanently in the SLX attachment archive (back to 2014). Keep the local
+# mirror out of git; the per-period manifest.json (hashes + run dates) IS the
+# committed provenance record and lets any re-fetch be verified.
+data/raw/crystal/**/*.xls
+data/raw/crystal/**/*.xlsx
+data/raw/crystal/**/*.csv
+data/raw/crystal/**/*.pdf
+data/receipts/
+data/closes/
+app.yaml

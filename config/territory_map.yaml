@@ -1,0 +1,177 @@
+# Maps every known territory name variant to its canonical MPR column name.
+# Used by all parsers to normalize territory names before any data mapping occurs.
+# Add new variants here whenever a source file uses a different spelling.
+
+canonical_territories:
+  - EastKing
+  - SouthKing
+  - NorthKing
+  - Pierce
+  - Snohomish
+  - Spokane/NE
+  - Southwest
+  - TKP
+  - Southeast
+  - NorthCentral
+  - Majors/NRA
+
+# variant -> canonical
+aliases:
+  # EastKing variants
+  "East King":      EastKing
+  "EastKing":       EastKing
+  "E King":         EastKing       # sales & goals sheet name
+  "EKing":          EastKing
+
+  # SouthKing variants
+  "SouthKing":      SouthKing
+  "South King":     SouthKing
+  "SKing":          SouthKing
+
+  # NorthKing variants
+  "NorthKing":      NorthKing
+  "North King":     NorthKing
+  "NKing":          NorthKing
+
+  # Pierce
+  "Pierce":         Pierce
+
+  # Snohomish variants
+  "Snohomish":      Snohomish
+  "Snoho":          Snohomish
+  "NW & Snoho":     Snohomish      # YTD sheet label for Amy
+
+  # Spokane/NE variants
+  "Spokane/NE":     Spokane/NE
+  "SpokaneNE":      Spokane/NE
+  "Spokane NE":     Spokane/NE
+  "Spokane":        Spokane/NE
+  "Spokane, Chelan, Douglas": Spokane/NE  # YTD sheet label for Marla
+
+  # Southwest variants
+  "Southwest":      Southwest
+  "SW":             Southwest
+
+  # TKP variants
+  "TKP":            TKP
+
+  # Southeast variants
+  "Southeast":      Southeast
+  "SE":             Southeast
+
+  # NorthCentral variants
+  "NorthCentral":   NorthCentral
+  "North Central":  NorthCentral
+  "NC":             NorthCentral
+
+  # Majors/NRA variants — NOTE: penetration report uses "NRA Paid Members" for this territory
+  "Majors/NRA":     Majors/NRA
+  "Majors":         Majors/NRA
+  "NRA Paid Members": Majors/NRA   # penetration report variant — confirmed match (773 active locations)
+  "MAJORS":         Majors/NRA     # quarterly sheet label
+  "MajorAccounts":  Majors/NRA     # SLX territory-user label (descriptor "Territory, MajorAccounts")
+
+# Rep name -> canonical territory (for sales & goals parser)
+rep_to_territory:
+  "Amy":      Snohomish
+  "Bailey":   SouthKing
+  "Gretchen": Southwest
+  "Marla":    Spokane/NE
+  "Michele":  NorthKing
+  "Robin B":  TKP
+  "Robin":    TKP
+  "Tamorro":  Pierce
+  "Tiffany":  NorthCentral
+  # EastKing and Southeast are currently open/unassigned — leave blank in MPR
+  "E King":   EastKing    # sheet exists but no assigned rep
+
+# Quarter -> months covered (fiscal year Oct-Sep).
+# NOTE: dead config — no code currently reads quarter_sheets. Kept for a future
+# quarter-rollup feature; safe to ignore or delete if that feature ships elsewhere.
+quarter_sheets:
+  "Q1 New Sales": [Oct, Nov, Dec]
+  "Q2 New Sales": [Jan, Feb, Mar]
+  "Q3 New Sales": [Apr, May, Jun]
+  "Q4 New Sales": [Jul, Aug, Sep]
+
+# SLX AccountManager user ID -> canonical territory
+# Territory is NOT a field on accounts directly.
+# Resolution path: account.AccountManager.Id -> users.$descriptor -> territory name
+# These are dedicated "territory user" accounts in SLX (not real people — each represents a territory).
+# Source: GET /users?where=UserName like '%Territory%' (confirmed 2026-04-30)
+slx_user_to_territory:
+  # NRA house user — discovered 2026-07-13: ALL 893 NRA chain accounts (McDonald's,
+  # Chipotle, Starbucks...) are managed by this single user. Mapping it makes the
+  # NRA bucket appear in penetration/billables, mirroring the CRM's "NRA Paid
+  # Members" row. Takes effect on the next live pull.
+  "U6UJ9A000083": Majors/NRA      # UserName: NRA house accounts
+  "U6UJ9A00009U": NorthCentral    # UserName: NorthCentralTerritory
+  "U6UJ9A00009V": Snohomish       # UserName: SnohomishTerritory
+  "U6UJ9A00009W": NorthKing       # UserName: NorthKingTerritory
+  "U6UJ9A00009X": EastKing        # UserName: EastKingTerritory
+  "U6UJ9A00009Y": SouthKing       # UserName: SouthKingTerritory
+  "U6UJ9A00009Z": Pierce          # UserName: PierceTerritory
+  "U6UJ9A0000A0": TKP             # UserName: TKPTerritory
+  "U6UJ9A0000A1": Southwest       # UserName: SouthwestTerritory
+  "U6UJ9A0000A2": Southeast       # UserName: SoutheastTerritory
+  "U6UJ9A0000A3": Spokane/NE      # UserName: SpokaneNETerritory
+  "U6UJ9A0000A5": Majors/NRA      # UserName: MajorAccountsTerritory
+  "U6UJ9A0000A6": null            # UserName: GeneralOpenTerritory — unassigned/catch-all, not in Scoreboard
+
+# Disabled "Open" territory users (Enabled: false — historical placeholders, ignore for billables)
+# U6UJ9A00002Z: OpenTerritory
+# U6UJ9A00003B: NWOpenTerritory
+# U6UJ9A00003C: SKingOpenTerritory
+# U6UJ9A00003D: CWOpenTerritory
+# U6UJ9A000041: PeninsulaOpenTerritory
+# U6UJ9A000047: SnohomishOpenTerritory
+# U6UJ9A000048: TKPOpenTerritory
+# U6UJ9A00005L: SEOpenTerritory
+# U6UJ9A000066: SWOpenTerritory
+# U6UJ9A00006I: EKingOpenTerritory
+# U6UJ9A00008H: AlliedOpenKPTerritory
+# U6UJ9A00008I: EFOpenTerritory
+
+# C6/C11 lost-cohort resolver (2026-08-12). When the flip-link walk lands a
+# lost member's PREDECESSOR record on one of the disabled open seats above,
+# the seat's name still says which territory the member belonged to. Only the
+# six name-unambiguous seats are mapped — NW/CW/Peninsula/plain-Open stay
+# unmapped on purpose and resolve to a flag, never a guess.
+open_territory_user_to_territory:
+  "U6UJ9A00003C": SouthKing      # SKingOpenTerritory
+  "U6UJ9A000047": Snohomish      # SnohomishOpenTerritory (Sparta's chain, proven live)
+  "U6UJ9A000048": TKP            # TKPOpenTerritory
+  "U6UJ9A00005L": Southeast      # SEOpenTerritory
+  "U6UJ9A000066": Southwest      # SWOpenTerritory
+  "U6UJ9A00006I": EastKing       # EKingOpenTerritory
+
+# House users whose members are FLAG-ONLY in the lost-cohort fetch (ruled
+# 2026-08-12): the CRM holds no territory for them and Jen's sheets carry
+# none of their members. They surface in flags with name + dollars instead
+# of being guessed into a territory cell.
+lost_cohort_house_users_flag_only:
+  - U6UJ9A0000A4                 # AlliedRelationsManager ("Manager, Allied")
+
+# Program/house reps whose drops appear on the DETAIL sheet only — never in
+# monthly buckets or T/NT counts (universe rule; mirrors the Admin-category
+# treatment). Their CRM drops export includes 119 retro-program rows under
+# Retro Coordinator; the team wants the information without polluting
+# territory performance. Consumed ONLY by the drops fetch (engine merges it
+# into that one call) — billables/penetration/retention never see these users.
+drops_detail_only_users:
+  U6UJ9A00008G: Retro Program   # RetroCoordinator house user (probed 2026-07-14)
+
+# SELLER (person) users → territory column, for seller-credit attribution
+# (7/16: AccountExtension.Originator holds PERSON user ids like tfarrell —
+# a different id family from the territory SEAT users above. Names matched
+# via the users directory + the goals workbook's TM sheets.)
+seller_user_to_territory:
+  U6UJ9A00008D: Snohomish      # AmySpain
+  U6UJ9A00008Y: SouthKing      # baileyd (Bailey Doughty)
+  U6UJ9A00008N: Southwest      # gretchenf (Gretchen Fritz)
+  U6UJ9A0000BY: EastKing       # JewellW (Jewell — EK column in handmade)
+  U6UJ9A00006H: Spokane/NE     # Marlaf (Marla)
+  U6UJ9A000057: NorthKing      # MicheleA (Michele Arney)
+  U6UJ9A00008Z: TKP            # robinb (Robin Boiraud)
+  U6UJ9A000043: Pierce         # tfarrell (Tamorro Farrell)
+  U6UJ9A0000CD: NorthCentral   # TiffanyG (Tiffany Gering)

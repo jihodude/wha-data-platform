@@ -1,0 +1,15 @@
+# settings.yaml — Runtime configuration.
+#
+# Most data comes from SLX live (no static file paths needed). Goals are in
+# goals.yaml. Penetration is SLX-computed too — see
+# src/logic/penetration_override.py for the documented override surface if you
+# need to substitute external research data.
+
+# Phase-1 Scoreboard template (xlsx written on top of)
+scoreboard_template_path: "data/raw/scoreboard_template.xlsx"
+
+# SLX HTTP client — base URL is in src/slx/client.py constants;
+# auth comes from SLX_USERNAME / SLX_PASSWORD env vars.
+
+# Default fiscal year if not provided on CLI
+default_fy_start: 2025
